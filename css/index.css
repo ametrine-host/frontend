@@ -168,17 +168,13 @@ section {
     width: 100%;
 }
 
-.divide{
-    margin-top: 100px;
-}
-
 #cards-wrapper{
     padding: 0 var(--page-gutter);
 }
 
 .cards{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin-top: 100px;
     max-width: var(--content-width);
     width: 100%;
@@ -188,7 +184,19 @@ section {
 .card{
     display: flex;
     flex-flow: column nowrap;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    transition: transform 0.5s ease,
+                background 0.5s ease,
+                box-shadow 0.5s ease;
 }
+
+.card:hover{
+    background: #f1f1f1;
+    transform: translateY(-10px);
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+}
+
 .card svg{
     width: 40px;
 }
@@ -208,7 +216,7 @@ section {
     width: 100%;
     max-width: var(--content-width);
     display: grid;
-    padding: 20px 0;
+    padding: 60px 0;
 }
 
 .long-description:nth-child(2n){
