@@ -7,7 +7,8 @@
     --magenta: #960e5d;
     --content-width: 1280px;
     --border-radius: 10px;
-    --faq-width: 100%;
+    --faq-width: 700px;
+    --banner-height: 30px;
 }
 
 * {
@@ -27,15 +28,18 @@ body{
 nav{
     width: 100vw;
     position: fixed;
-    top: 0;
+    top: 0px;
     left: 0;
     display: flex;
     justify-content: center;
-    padding: 10px 0;
+    align-items: center;
+    padding: 0 0 10px 0;
     z-index: 20;
     background: rgba(0,0,0,0.2);
     backdrop-filter: blur(2px);
     transition: backdrop-filter 0.5s ease, background 0.5s ease;
+    flex-flow: column nowrap;
+    gap: 10px;
 }
 nav.scrolled{
     background: rgba(0,0,0,0.4);
@@ -94,11 +98,51 @@ nav > div{
     filter: brightness(1.2);
 }
 
+.banner{
+    background-color: #960e5d;
+    max-width:none;
+    height: var(--banner-height);
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    gap: 10px;
+    flex-flow: column nowrap;
+    overflow: hidden;
+}
+
+#cycler{
+    transition: 1s ease;
+}
+
+.banner span{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.banner p{
+    margin: 4px 0;
+    color: var(--pink);
+}
+
+.banner svg{
+    width: 20px;
+    color: var(--pink);
+}
+
+.banner a{
+    font-weight: bold;
+    color: var(--pink);
+    text-decoration: none;
+}
 
 
 
 
-h2{
+
+
+h2, b{
     color: var(--pink);
 }
 p{
@@ -147,7 +191,7 @@ header .content-wrapper h1{
     font-size: 3rem;
     margin-bottom: 10px;
 }
-header .content-wrapper p{
+header .content-wrapper p,  header b{
     color: white;
     margin: 0;
     font-size: 1.2rem;
@@ -219,19 +263,19 @@ section {
 #reviews-wrapper .cards{
     grid-template-columns: repeat(3, 1fr);
     column-gap: 10px;
-    pointer-events: none;
 }
 
-#reviews-wrapper img{
+#reviews-wrapper svg{
     margin-top: 20px;
+    color: var(--pink);
 }
 
-#reviews-wrapper img ~ p{
-    margin-bottom: 0;
+#reviews-wrapper svg ~ p{
+    margin: 5px 0 0 0;
 }
 
-#reviews-wrapper img ~ p ~ p{
-    margin-top: 5px;
+#reviews-wrapper svg ~ p ~ p{
+    margin-top: 0;
 }
 
 #reviews-wrapper .cta{
@@ -242,7 +286,6 @@ section {
     width: 40px;
 }
 .card > p:last-of-type{
-    color: #272727;
     font-weight: 400;
 }
 
@@ -257,7 +300,7 @@ section {
     width: 100%;
     max-width: var(--content-width);
     display: grid;
-    padding: 60px 0;
+    padding: 60px var(--page-gutter);
 }
 
 .long-description:nth-child(2n){
@@ -321,7 +364,6 @@ section a:hover{
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     max-width: var(--faq-width);
-    text-align: left;
   }
   .collapsible:after {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
@@ -338,13 +380,14 @@ section a:hover{
   .faq{
     width: 100%;
     max-width: var(--content-width);
-    padding: 0 250px;
+    padding: 0 var(--page-gutter);
     text-align: center;
     margin-top: 100px;
   }
-  .faq > div:not(.content){
+  .faq > div{
     margin-inline: auto;
     text-align: left;
+    max-width: var(--faq-width);
   }
   .faq h2{
     font-size: 2rem;

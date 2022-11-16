@@ -22,3 +22,15 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+const offerCycler = document.getElementById("cycler");
+let cycle = 1;
+setInterval(() => {
+  if(cycle > offerCycler.children.length-1){
+    cycle=0;
+    offerCycler.style.transform = "translateY(0px)";
+  }else{
+    offerCycler.style.transform = `translateY(${-30*cycle}px)`;
+  }
+  cycle = cycle+1;
+}, 5000);
