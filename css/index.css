@@ -86,7 +86,7 @@ section, footer {
 .card{
     display: flex;
     flex-flow: column nowrap;
-    padding: 10px;
+    padding: 20px;
     border-radius: var(--border-radius);
     transition: transform 0.5s ease,
                 background 0.5s ease,
@@ -232,6 +232,15 @@ section a:hover{
     text-align: left;
     max-width: var(--faq-width);
   }
+  .faq span{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    max-width:  var(--faq-width);
+    margin: 10px auto 0 auto;
+  }
   .faq h2{
     font-size: 2rem;
   }
@@ -334,29 +343,23 @@ section a:hover{
         --page-gutter: 20px;
     }
     .hide-on-mobile{
-        display: none;
+        display: none !important;
     }
     .hide-on-desktop{
-        display: initial;
+        display: initial !important;
+    }
+    .cards{
+        gap: 50px;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (max-width: 830px){
-    .hide-on-mobile{
-        display: none;
-    }
-    .hide-on-desktop{
-        display: initial;
-    }
+@media screen and (max-width: 870px){
     header{
         grid-template-columns: 1fr;
     }
     header img{
         display: none;
-    }
-    .cards{
-        gap: 50px;
-        grid-template-columns: repeat(2, 1fr);
     }
     .long-description div.left{
         grid-template-columns: 1fr;
@@ -378,6 +381,9 @@ section a:hover{
 }
 
 @media screen and (max-width: 700px){
+    :root{
+        --page-gutter: 10px !important;
+    }
     .links{
         grid-template-columns: 1fr 1fr;
     }
@@ -389,10 +395,10 @@ section a:hover{
         clip-path: none;
     }
     .banner{
-        display: none;
+        display: none !important;
     }
     nav{
-        padding-top: 10px;
+        padding-top: 10px !important;
     }
     footer > div{
         grid-template-columns: 1fr;
@@ -412,16 +418,13 @@ section a:hover{
         display: flex;
         flex-flow: column nowrap;
     }
-    .cta a{
-        max-width: 250px;
-        text-align: center;
-    }
     .last-cta .cta{
         align-items: center;
     }
     .cta a{
         max-width: none;
         width: 100%;
+        text-align: center;
     }
 }
 
