@@ -9,6 +9,7 @@
     --border-radius: 10px;
     --faq-width: 700px;
     --banner-height: 30px;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -22,7 +23,7 @@ body{
     grid-template-columns: 1fr;
     row-gap: 0;
     background-color: white;
-    padding: 0 0 200px 0;
+    padding: 0;
 }
 
 nav{
@@ -82,8 +83,9 @@ nav > div{
     text-decoration: none;
 }
 
-#client-area{
+.client-area{
     width: 170px;
+    height: 40px;
     padding-inline: 10px;
     background-color: var(--pink);
     display: grid;
@@ -94,7 +96,7 @@ nav > div{
     color: var(--white);
     font-weight: bold;
 }
-#client-area:hover{
+.client-area:hover{
     filter: brightness(1.2);
 }
 
@@ -225,7 +227,7 @@ header .content-wrapper p,  header b{
 
 
 
-section {
+section, footer {
     display: grid;
     place-items: center;
     width: 100%;
@@ -400,6 +402,199 @@ section a:hover{
     font-size: 2rem;
   }
 
-@media (max-width: 1000px){
+  .last-cta{
+    width: 100%;
+    max-width: var(--content-width);
+    padding: 0 var(--page-gutter);
+    text-align: center;
+    margin-top: 100px;
+    display: grid;
+    justify-content: center;
+  }
+  .last-cta p{
+    font-variant: small-caps;
+  }
+  .last-cta div{
+    max-width: var(--faq-width);
+  }
+  .last-cta .cta{
+    justify-content: center;
+  }
+  .faq > div{
+    margin-inline: auto;
+    text-align: left;
+    max-width: var(--faq-width);
+  }
+  .faq h2{
+    font-size: 2rem;
+  }
 
+  footer{
+    background: black;
+    margin-top:100px;
+    padding:10px;
+  }
+  footer > div{
+    width: 100%;
+    max-width: var(--content-width);
+    padding: 0 var(--page-gutter);
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+  }
+
+  .links{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: var(--pink);
+    padding-bottom: 50px;
+  }
+  .links div{
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .links a{
+    color: var(--white);
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  .links a:not(.client-area):hover{
+    color: var(--pink);
+  }
+  .socials{
+    display: grid;
+    place-items: center;
+  }
+  .socials > div{
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .socials > div > span{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  .socials > div > span a{
+    width: 30px;
+    filter: brightness(0.8);
+  }
+  .socials > div > span a:hover{
+    filter: brightness(1);
+  }
+
+  .hide-on-desktop{
+    display: none;
+  }
+
+  .nav-controller{
+    width: 40px;
+    height: 40px;
+    display: block;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+  }
+
+@media (max-width: 1000px){
+    :root{
+        --page-gutter: 20px;
+    }
+    .hide-on-mobile{
+        display: none;
+    }
+    .hide-on-desktop{
+        display: initial;
+    }
+}
+
+@media (max-width: 830px){
+    .hide-on-mobile{
+        display: none;
+    }
+    .hide-on-desktop{
+        display: initial;
+    }
+    header{
+        grid-template-columns: 1fr;
+    }
+    header img{
+        display: none;
+    }
+    .cards{
+        gap: 50px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .long-description div.left{
+        grid-template-columns: 1fr;
+    }
+    .long-description div.right{
+        grid-template-columns: 1fr;
+    }
+    .long-description div.right > span{
+        grid-row: 1;
+    }
+    .long-description img{
+        width: 100vw;
+        max-width: 500px;
+    }
+    #reviews-wrapper .cards{
+        grid-template-columns: 1fr;
+        column-gap: 10px;
+    }
+}
+
+@media (max-width: 700px){
+    .links{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 550px){
+    header{
+        height: 90vh;
+        clip-path: none;
+    }
+    .banner{
+        display: none;
+    }
+    nav{
+        padding-top: 10px;
+    }
+    footer > div{
+        grid-template-columns: 1fr;
+    }
+    .socials{
+        grid-row: 2;
+        place-items: initial;
+    }
+    .cards{
+        gap: 50px;
+        grid-template-columns: 1fr;
+    }
+    .long-description img{
+        width: 200px;
+    }
+    .cta{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .cta a{
+        max-width: 250px;
+        text-align: center;
+    }
+    .last-cta .cta{
+        align-items: center;
+    }
+    .cta a{
+        max-width: none;
+        width: 100%;
+    }
+}
+
+@media (max-height: 600px){
+    header{
+        clip-path: none;
+        height: 100vh;
+    }
 }

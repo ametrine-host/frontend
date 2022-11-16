@@ -32,14 +32,19 @@
         </div>
         <div>
             <a id="logo-wrapper" href=""><img width="40px" src="../images/trademark/AmetrineSmall.webp">Ametrine.host</a>
-            <div class="anchor-wrapper">
+            <div class="anchor-wrapper hide-on-mobile">
                 <a href="">Products</a>
                 <a href="">Support</a>
                 <a href="">About</a>
                 <a href="">Resources</a>
                 <a href="">Uptime</a>
             </div>
-            <a id="client-area" href="">Client Area</a>
+            <button class="hide-on-desktop nav-controller" id="open-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                </svg>
+            </button>           
+            <a class="client-area hide-on-mobile" href="">Client Area</a>
         </div>
     </nav>
     <header>
@@ -55,7 +60,6 @@
                 </div>
             </span>
         </div>
-        <!--TODO: replace skin.png with commercial use imagery-->
         <img src="../images/Skin1.png">
     </header>
     <section id="cards-wrapper">
@@ -172,7 +176,52 @@
             </div> 
         </div>
     </section>
+    <section>
+        <div class="last-cta">
+            <div>
+                <p>still wondering?</p>
+                <h2>Take advantage of our free trial on our Discord server and get to know us!</h2>
+            </div>
+            <div class="cta">
+                <a class="cta-1" href="">Order now!</a>
+                <a class="cta-2" href="">Join our Discord</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <div class="socials">
+                <div>
+                    <a id="logo-wrapper" href=""><img width="40px" src="../images/trademark/AmetrineSmall.webp">Ametrine.host</a>
+                    <span>
+                        <a href=""><img src="../images/svg/discord.svg" alt=""></a>
+                        <a href=""><img src="../images/svg/youtube.svg" alt=""></a>
+                    </span>
+                </div>
+            </div>
+            <div class="links">
+                <div>
+                    <h3>Support</h3>
+                    <a href="#">Make a ticket</a>
+                    <a href="">Write an E-Mail</a>
+                    <a href="">Join our Discord</a>
+                </div>
+                <div>
+                    <h3>Company</h3>
+                    <a href="">Our goal</a>
+                    <a href="">Join our team</a>
+                    <a href="">Partners</a>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <a href="">Terms of Service</a>
+                    <a href="">Privacy Policy</a>
+                    <a href="">Service Level Agreement</a>
+                    <a href="">Branding</a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="../js/index.js"></script>
 </body>
-
 </html>
