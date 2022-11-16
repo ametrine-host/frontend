@@ -8,6 +8,8 @@ window.addEventListener("scroll", () => {
     }
 })
 
+
+
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -22,6 +24,8 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+
 
 const offerCycler = document.getElementById("cycler");
 let cycle = 1;

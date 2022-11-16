@@ -270,6 +270,13 @@ section {
     color: var(--pink);
 }
 
+.review-description p{
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
 #reviews-wrapper svg ~ p{
     margin: 5px 0 0 0;
 }
@@ -341,8 +348,8 @@ section a:hover{
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-    background-color: #eee;
-    color: #444;
+    background: none;
+    color: var(--pink);
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -353,28 +360,28 @@ section a:hover{
     max-width: var(--faq-width);
   }
   
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .collapsible:hover {
-    background-color: #ccc;
+    background-color: var(--white);
   }
   .content {
     padding: 0 18px;
-    background-color: white;
+    background-color: #f1f1f1;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     max-width: var(--faq-width);
   }
   .collapsible:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    content: '\02795';
     font-size: 13px;
-    color: white;
+    color: transparent;  
+    text-shadow: 0 0 0 var(--pink);
     float: right;
     margin-left: 5px;
   }
   
   .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    content: "\2796";
   }
 
   .faq{
