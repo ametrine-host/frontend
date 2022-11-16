@@ -1,0 +1,152 @@
+:root{
+    --page-gutter: 40px;
+    --black: #272727;
+    --white: #DDDDDF;
+    --orange: #FE9000;
+    --pink: #F90093;
+    --magenta: #960e5d;
+    --content-width: 1280px;
+    --border-radius: 10px;
+    --faq-width: 700px;
+    --banner-height: 30px;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    display: grid;
+    margin: 0;
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    background-color: white;
+    padding: 0;
+}
+
+nav{
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 10px 0;
+    z-index: 20;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(2px);
+    transition: backdrop-filter 0.5s ease, background 0.5s ease;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+nav.scrolled{
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+}
+nav > div{
+    max-width: var(--content-width);
+    width: 100%;
+    padding: 0 var(--page-gutter);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#logo-wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--white);
+    width: 170px;
+    margin-right: 40px;
+}
+
+.anchor-wrapper{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.anchor-wrapper a{
+    color: white;
+    text-decoration: none;
+}
+
+.anchor-wrapper a:hover{
+    color: var(--pink);
+    text-decoration: none;
+}
+
+.client-area{
+    width: 170px;
+    height: 40px;
+    padding-inline: 10px;
+    background-color: var(--pink);
+    display: grid;
+    place-items: center;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+}
+.client-area:hover{
+    filter: brightness(1.2);
+}
+
+.banner{
+    background-color: #960e5d;
+    max-width:none;
+    height: var(--banner-height);
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    gap: 10px;
+    flex-flow: column nowrap;
+    overflow: hidden;
+}
+
+#cycler{
+    transition: 1s ease;
+}
+
+.banner span{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.banner p{
+    margin: 4px 0;
+    color: var(--pink);
+}
+
+.banner svg{
+    width: 20px;
+    color: var(--pink);
+}
+
+.banner a{
+    font-weight: bold;
+    color: var(--pink);
+    text-decoration: none;
+}
+
+
+
+
+
+
+h2, b{
+    color: var(--pink);
+}
+p{
+    color: var(--magenta);  
+}
