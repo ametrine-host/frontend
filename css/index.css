@@ -293,9 +293,10 @@ section a:hover{
 
   .links{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     color: var(--pink);
     padding-bottom: 50px;
+    gap: 20px;
   }
   .links div{
     display: flex;

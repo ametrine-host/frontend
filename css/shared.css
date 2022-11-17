@@ -28,8 +28,8 @@ body{
 
 nav{
     width: 100vw;
-    position: fixed;
-    top: 0px;
+    position: absolute;
+    top: 0;
     left: 0;
     display: flex;
     justify-content: center;
@@ -146,4 +146,40 @@ nav > div{
 
 h2, b{
     color: var(--pink);
+}
+
+
+
+
+popup{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+    place-items: center;
+    padding-inline: var(--page-gutter);
+    background: rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: 1s ease;
+}
+popup.open{
+    display: grid;
+    opacity: 1;
+}
+popup > div{
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 600px;
+    transition: 1s ease;
+    transform: scale(0);
+}
+popup.open > div{
+    transform: scale(1);
 }

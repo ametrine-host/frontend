@@ -1,15 +1,3 @@
-const nav = document.querySelector("nav");
-
-window.addEventListener("scroll", () => {
-    if(window.scrollY){
-        nav.classList.add("scrolled");
-    }else{
-        nav.classList.remove("scrolled");
-    }
-})
-
-
-
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -38,3 +26,27 @@ setInterval(() => {
   }
   cycle = cycle+1;
 }, 5000);
+
+//POPUP MANAGER
+
+let activeId = "";
+
+document.addEventListener("click", (event) => {
+    if(event.target.tagName.toLowerCase() == "popup"){
+        close(activeId);
+    }
+});
+
+function open(id){ //Open a popup;
+    if(!id) return;
+    document.getElementById(id).classList.add("open");
+    activeId = id;
+}
+
+function close(id){ //Close a popup;
+    if(!id) return;
+    document.getElementById(id).classList.remove("open");
+    activeId = "";
+}
+
+document.querySelector("#support-button").addEventListener("click", () => {open("support")});
