@@ -357,6 +357,7 @@ section a:hover{
 @media screen and (max-width: 870px){
     header{
         grid-template-columns: 1fr;
+        background-position: 40% 60%;
     }
     header img{
         display: none;
