@@ -276,6 +276,12 @@ section a:hover{
     background: black;
     margin-top:100px;
     padding:10px;
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+    justify-content: center;
+  }
+  footer > p{
+    color: var(--white);
   }
   footer > div{
     width: 100%;
