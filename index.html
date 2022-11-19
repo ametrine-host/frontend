@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/shared.css">
+
+    <title>Ametrine.host</title>
+    <meta name="description" content="Ametrine.host is an honest game server hosting website, where you can get reliable game servers for as low as €0.80/GB/Month">
+    <link rel="icon" type="image/x-icon" href="/images/trademark/AmetrineSmall.webp">
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,16 +13,49 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
+    <link rel="preload" as="image" href="./images/svg/puff.svg">
+
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/shared.css">
+
+    <style>
+        loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: white;
+            z-index: 200;
+            display: grid;
+            place-items: center;
+        }
+        loader.loaded{
+            opacity:0;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+    <noscript>
+        <style>
+            loader{
+                display: none !important;
+            }
+        </style>
+    </noscript>
 </head>
 
 <body>
-    <popup id="support">
+    <loader aria-hidden="true">
+        <img src="/images/svg/puff.svg" height="50" alt="Loading">          
+    </loader>
+    <popup id="support" aria-hidden="true">
         <div>
             <h2>Support</h2>
             <p>Choose your preferred way of contacting us</p>
-            <a href="">Write a ticket</a>
-            <a href="">Write an E-Mail</a>
-            <a href="">Join our Discord</a>
+            <a href="#">Write a ticket</a>
+            <a href="#">Write an E-Mail</a>
+            <a href="#">Join our Discord</a>
+            <button id="close-support">Close</button>
         </div>
     </popup>
     <nav>
@@ -29,31 +64,40 @@
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path fill-rule="evenodd" d="M5.25 2.25a3 3 0 00-3 3v4.318a3 3 0 00.879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 005.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 00-2.122-.879H5.25zM6.375 7.5a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" clip-rule="evenodd" />
-                    </svg>              
-                    <p>Get 50% off your first Month with coupon <b>STARTUP</b></p>
+                    </svg>
+                    <p>Get 50% off your first Month with coupon <i>STARTUP</i></p>
                 </span>
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path fill-rule="evenodd" d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" clip-rule="evenodd" />
                         <path d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z" />
                       </svg>                                    
-                    <p>Join our <a href="">Discord server</a> and ask for a free trial!</p>
+                    <p>Join our <a href="#">Discord server</a> and ask for a free trial!</p>
                 </span>
             </div>
         </div>
         <div>
-            <a id="logo-wrapper" href=""><img width="40px" src="./images/trademark/AmetrineSmall.webp">Ametrine.host</a>
-            <div class="anchor-wrapper hide-on-mobile">
-                <a href="">Products</a>
+            <a class="logo-wrapper" href="#"><img width="40px" height="40px" alt="logo" src="./images/trademark/AmetrineSmall.webp">Ametrine.host</a>
+            <div class="anchor-wrapper">
+                <div class="hide-on-desktop">
+                    <a class="logo-wrapper" href="#"><img width="40px" height="40px" alt="logo" src="./images/trademark/AmetrineSmall.webp">Ametrine.host</a>
+                    <button id="close-nav">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <a href="#">Products</a>
                 <a id="support-button" role="button">Support</a>
-                <a href="">Uptime</a>
+                <a href="#">Uptime</a>
             </div>
+            <div id="nav-backdrop" class="hide-on-desktop"></div>
             <button class="hide-on-desktop nav-controller" id="open-nav">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                     <path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
                 </svg>
             </button>           
-            <a class="client-area hide-on-mobile" href="">Client Area</a>
+            <a class="client-area hide-on-mobile" href="#">Client Area</a>
         </div>
     </nav>
     <header>
@@ -64,33 +108,33 @@
                 </h1>
                 <p>Hosted with powerful hardware inside eco-friendly data centers starting at <b>€0.85/GB</b></p>
                 <div class="cta">
-                    <a class="cta-1" href="">Order now!</a>
-                    <a class="cta-2" href="">Get in touch</a>
+                    <a class="cta-1" href="#">Order now!</a>
+                    <a class="cta-2" href="#">Get in touch</a>
                 </div>
             </span>
         </div>
-        <img src="./images/Skin1.png">
+        <img width="365px" height="500px" alt="Minecraft mascot" src="./images/avif/Skin1.avif">
     </header>
     <section id="cards-wrapper">
         <div class="cards">
             <div class="card">
-                <img src="./images/svg/bolt.svg" width="40" height="40"/>
-                <p><b>Blazing fast</b></p>
+                <img aria-hidden="true" alt="Lightning bolt" src="./images/svg/bolt.svg" width="40px" height="40px"/>
+                <p>Blazing fast</p>
                 <p>With guaranteed DDR4 RAMs, NVMe storage and powerful CPUs on every node.</p>
             </div>
             <div class="card">
-                <img src="./images/svg/fast.svg" width="40" height="40"/>
-                <p><b>Fast support</b></p>
+                <img aria-hidden="true" alt="Fast Forward" src="./images/svg/fast.svg" width="40px" height="40px"/>
+                <p>Fast support</p>
                 <p>Our friendly staff are here to help you with any issues you might encounter during your gaming adventure.</p>
             </div>
             <div class="card">
-                <img src="./images/svg/uptime.svg" width="40" height="40"/>
-                <p><b>High Uptime</b></p>
-                <p>A proven uptime of +99.99% from reliable data centers in all our locations, covered by our <a href="">SLA</a></p>
+                <img aria-hidden="true" alt="Upwards trending graph" src="./images/svg/uptime.svg" width="40px" height="40px"/>
+                <p>High Uptime</p>
+                <p>A proven uptime of +99.99% from reliable data centers in all our locations, covered by our <a href="#">SLA</a></p>
             </div>
             <div class="card">
-                <img src="./images/svg/backup.svg" width="40" height="40"/>
-                <p><b>Automatic Backups</b></p>
+                <img aria-hidden="true" alt="Cloud" src="./images/svg/backup.svg" width="40px" height="40px"/>
+                <p>Automatic Backups</p>
                 <p><b>PLANNED FEATURE:</b> Offsite automatic backups every 12 hours.</p>
             </div>
             
@@ -106,12 +150,12 @@
                         useful practices to get the most out of your service.
                     </p>
                 </span>
-                <img width="500" src="./images/svg/database.svg"/>
+                <img width="500px" height="500px" alt="server" src="./images/svg/database.svg"/>
             </div>
         </div>
         <div class="long-description">
             <div class="right">
-                <img width="500" src="./images/svg/cyber.svg"/>
+                <img width="500px" height="500px" alt="privacy" src="./images/svg/cyber.svg"/>
                 <span>
                     <h2>We simply don't compromise on anything, even cyber-security.</h2>
                     <p>
@@ -124,41 +168,41 @@
     <section id="reviews-wrapper">
         <div class="cards">
             <div class="card">
-                <p><b>Review</b></p>
+                <p>Review</p>
                 <div class="review-description">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat dictum mauris eu fermentum. Cras placerat quam eros, eget placerat leo posuere et. Ut mattis sagittis quam, a faucibus ipsum maximus sed. Fusce vehicula suscipit nulla, vitae pulvinar tortor laoreet vitae. Sed justo lorem, gravida at semper eget, molestie vel tortor. Quisque magna ante, ultricies at hendrerit a, mattis ut enim. Vivamus porta malesuada aliquam. Nullam commodo velit a lacus elementum, vitae facilisis ligula tempor.</p>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                     <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
                 </svg>                  
-                <p><b>Name Surname</b></p>
+                <p>Name Surname</p>
                 <p>Position @ ???</p>
             </div>
             <div class="card">
-                <p><b>Review</b></p>
+                <p>Review</p>
                 <div class="review-description">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat dictum mauris eu fermentum. Cras placerat quam eros, eget placerat leo posuere et. Ut mattis sagittis quam, a faucibus ipsum maximus sed. Fusce vehicula suscipit nulla, vitae pulvinar tortor laoreet vitae. Sed justo lorem, gravida at semper eget, molestie vel tortor. Quisque magna ante, ultricies at hendrerit a, mattis ut enim. Vivamus porta malesuada aliquam. Nullam commodo velit a lacus elementum, vitae facilisis ligula tempor.</p>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                     <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
                 </svg>
-                <p><b>Name Surname</b></p>
+                <p>Name Surname</p>
                 <p>Position @ ???</p>
             </div>
             <div class="card">
-                <p><b>Review</b></p>
+                <p>Review</p>
                 <div class="review-description">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat dictum mauris eu fermentum. Cras placerat quam eros, eget placerat leo posuere et. Ut mattis sagittis quam, a faucibus ipsum maximus sed. Fusce vehicula suscipit nulla, vitae pulvinar tortor laoreet vitae. Sed justo lorem, gravida at semper eget, molestie vel tortor. Quisque magna ante, ultricies at hendrerit a, mattis ut enim. Vivamus porta malesuada aliquam. Nullam commodo velit a lacus elementum, vitae facilisis ligula tempor.</p>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                     <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
                 </svg>
-                <p><b>Name Surname</b></p>
+                <p>Name Surname</p>
                 <p>Position @ ???</p>
             </div>
         </div>
         <div class="cta">
-            <a class="cta-1" href="">See all reviews</a>
+            <a class="cta-1" href="#">See all reviews</a>
         </div>
     </section>
     <section>
@@ -200,8 +244,8 @@
                 <h2>Take advantage of our free trial on our Discord server and get to know us!</h2>
             </div>
             <div class="cta">
-                <a class="cta-1" href="">Order now!</a>
-                <a class="cta-2" href="">Join our Discord</a>
+                <a class="cta-1" href="#">Order now!</a>
+                <a class="cta-2" href="#">Join our Discord</a>
             </div>
         </div>
     </section>
@@ -209,10 +253,10 @@
         <div>
             <div class="socials">
                 <div>
-                    <a id="logo-wrapper" href=""><img width="40px" src="./images/trademark/AmetrineSmall.webp">Ametrine.host</a>
+                    <a class="logo-wrapper" href="#"><img width="40px" alt="logo" src="./images/trademark/AmetrineSmall.webp">Ametrine.host</a>
                     <span>
-                        <a href=""><img src="./images/svg/discord.svg" alt=""></a>
-                        <a href=""><img src="./images/svg/youtube.svg" alt=""></a>
+                        <a href="#"><img src="./images/svg/discord.svg" width="30px" height="30px" alt="Discord"></a>
+                        <a href="#"><img src="./images/svg/youtube.svg" width="30px" height="30px" alt="Youtube"></a>
                     </span>
                 </div>
             </div>
@@ -220,31 +264,35 @@
                 <div>
                     <h3>Support</h3>
                     <a href="#">Make a ticket</a>
-                    <a href="">Write an E-Mail</a>
-                    <a href="">Join our Discord</a>
+                    <a href="#">Write an E-Mail</a>
+                    <a href="#">Join our Discord</a>
                 </div>
                 <div>
                     <h3>Company</h3>
-                    <a href="">Our goal</a>
-                    <a href="">Join our team</a>
-                    <a href="">Partners</a>
+                    <a href="#">Our goal</a>
+                    <a href="#">Join our team</a>
+                    <a href="#">Partners</a>
                 </div>
                 <div>
                     <h3>Resources</h3>
-                    <a href="">Terms of Service</a>
-                    <a href="">Privacy Policy</a>
-                    <a href="">Service Level Agreement</a>
-                    <a href="">Branding</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Service Level Agreement</a>
+                    <a href="#">Branding</a>
                 </div>
                 <div>
                     <h3>Credits</h3>
-                    <a href="">Iconfinder</a> <!--graphics-->
-                    <a href="">Heroicons</a> <!--icons-->
+                    <a href="https://www.iconfinder.com/kmgdesignid">Iconfinder</a> <!--graphics-->
+                    <a href="https://heroicons.com/">Heroicons</a> <!--icons-->
                 </div>
             </div>
         </div>
         <p>© Ametrine.host 2022</p>
     </footer>
-    <script src="./js/index.js"></script>
+    <script src="./js/nav.js" defer></script>
+    <script src="./js/collapsible.js" defer></script>
+    <script src="./js/popups.js" defer></script>
+    <!--DONT DEFER LOADER-->
+    <script src="./js/loader.js"></script>
 </body>
 </html>

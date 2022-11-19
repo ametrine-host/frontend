@@ -1,7 +1,7 @@
 header{
     width: 100%;
     height: 70vh;
-    background: url("../images/header.jpg");
+    background: url("../images/avif/header.avif");
     background-size: cover;
     background-position: 0% 60%;
     backdrop-filter: brightness(0.5);
@@ -125,13 +125,17 @@ section, footer {
     margin-inline: auto;
 }
 
+#reviews-wrapper .card > p:not(:last-of-type){
+    color: var(--pink);
+    font-weight: bold;
+}
+
 .card svg{
     width: 40px;
 }
-.card > p:last-of-type{
-    font-weight: 400;
+.card > p:first-of-type, .card a{
+    font-weight: bold;
 }
-
 
 .long-description{
     display: grid;
@@ -194,6 +198,7 @@ section a:hover{
     outline: none;
     font-size: 15px;
     max-width: var(--faq-width);
+    font-weight:bolder;
   }
   
   .active, .collapsible:hover {
@@ -224,7 +229,6 @@ section a:hover{
     width: 100%;
     max-width: var(--content-width);
     padding: 0 var(--page-gutter);
-    text-align: center;
     margin-top: 100px;
   }
   .faq > div{
@@ -263,6 +267,9 @@ section a:hover{
   .last-cta .cta{
     justify-content: center;
   }
+  .last-cta .cta-2:hover{
+    filter: brightness(0.9);
+  }
   .faq > div{
     margin-inline: auto;
     text-align: left;
@@ -272,89 +279,7 @@ section a:hover{
     font-size: 2rem;
   }
 
-  footer{
-    background: black;
-    margin-top:100px;
-    padding:10px;
-    display: grid;
-    grid-template-rows: 5fr 1fr;
-    justify-content: center;
-  }
-  footer > p{
-    color: var(--white);
-  }
-  footer > div{
-    width: 100%;
-    max-width: var(--content-width);
-    padding: 0 var(--page-gutter);
-    display: grid;
-    grid-template-columns: 2fr 5fr;
-  }
-
-  .links{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    color: var(--pink);
-    padding-bottom: 50px;
-    gap: 20px;
-  }
-  .links div{
-    display: flex;
-    flex-flow: column nowrap;
-  }
-  .links a{
-    color: var(--white);
-    text-decoration: none;
-    margin-top: 20px;
-  }
-  .links a:not(.client-area):hover{
-    color: var(--pink);
-  }
-  .socials{
-    display: grid;
-    place-items: center;
-  }
-  .socials > div{
-    display: flex;
-    flex-flow: column nowrap;
-  }
-  .socials > div > span{
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-  }
-  .socials > div > span a{
-    width: 30px;
-    filter: brightness(0.8);
-  }
-  .socials > div > span a:hover{
-    filter: brightness(1);
-  }
-
-  .nav-controller{
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-  }
-
-  .hide-on-desktop{
-    display: none;
-  }
-
 @media screen and (max-width: 1000px){
-    :root{
-        --page-gutter: 20px;
-    }
-    .hide-on-mobile{
-        display: none !important;
-    }
-    .hide-on-desktop{
-        display: initial !important;
-    }
     .cards{
         gap: 50px;
         grid-template-columns: repeat(2, 1fr);
@@ -388,32 +313,10 @@ section a:hover{
     }
 }
 
-@media screen and (max-width: 700px){
-    :root{
-        --page-gutter: 10px !important;
-    }
-    .links{
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
 @media screen and (max-width: 550px){
     header{
         height: 90vh;
         clip-path: none;
-    }
-    .banner{
-        display: none !important;
-    }
-    nav{
-        padding-top: 10px !important;
-    }
-    footer > div{
-        grid-template-columns: 1fr;
-    }
-    .socials{
-        grid-row: 2;
-        place-items: initial;
     }
     .cards{
         gap: 50px;

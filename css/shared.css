@@ -1,4 +1,4 @@
-:root{
+:root {
     --page-gutter: 40px;
     --black: #272727;
     --white: #DDDDDF;
@@ -17,16 +17,19 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-body{
+body {
     display: grid;
     margin: 0;
     grid-template-columns: 1fr;
     row-gap: 0;
     background-color: white;
     padding: 0;
+    overflow-x: hidden;
 }
 
-nav{
+/*#region NAVBAR*/
+
+nav {
     width: 100vw;
     position: absolute;
     top: 0;
@@ -36,17 +39,19 @@ nav{
     align-items: center;
     padding: 0 0 10px 0;
     z-index: 20;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(2px);
     transition: backdrop-filter 0.5s ease, background 0.5s ease;
     flex-flow: column nowrap;
     gap: 10px;
 }
-nav.scrolled{
-    background: rgba(0,0,0,0.4);
+
+nav.scrolled {
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(5px);
 }
-nav > div{
+
+nav>div {
     max-width: var(--content-width);
     width: 100%;
     padding: 0 var(--page-gutter);
@@ -55,7 +60,7 @@ nav > div{
     justify-content: space-between;
 }
 
-#logo-wrapper{
+.logo-wrapper {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -67,23 +72,24 @@ nav > div{
     margin-right: 40px;
 }
 
-.anchor-wrapper{
+.anchor-wrapper {
     display: flex;
     gap: 50px;
     align-items: center;
 }
 
-.anchor-wrapper a{
+.anchor-wrapper a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
-.anchor-wrapper a:hover{
+.anchor-wrapper a:hover {
     color: var(--pink);
     text-decoration: none;
 }
 
-.client-area{
+.client-area {
     width: 170px;
     height: 40px;
     padding-inline: 10px;
@@ -93,83 +99,87 @@ nav > div{
     border-radius: var(--border-radius);
     cursor: pointer;
     text-decoration: none;
-    color: var(--white);
+    color: black;
     font-weight: bold;
 }
-.client-area:hover{
+
+.client-area:hover {
     filter: brightness(1.2);
 }
 
-.banner{
-    background-color: #960e5d;
-    max-width:none;
+.banner {
+    background-color: var(--magenta);
+    max-width: none;
     height: var(--banner-height);
     display: flex;
-    justify-content:start;
+    justify-content: start;
     align-items: center;
     gap: 10px;
     flex-flow: column nowrap;
     overflow: hidden;
 }
 
-#cycler{
+#cycler {
     transition: 1s ease;
 }
 
-.banner span{
+.banner span {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     gap: 10px;
 }
 
-.banner p{
+.banner p {
     margin: 4px 0;
     color: var(--pink);
+    font-weight: bold;
 }
 
-.banner svg{
+.banner svg {
     width: 20px;
     color: var(--pink);
 }
 
-.banner a{
+.banner a {
     font-weight: bold;
     color: var(--pink);
     text-decoration: none;
 }
 
+/* #endregion */
 
-
-
-
-
-h2, b{
+h2,
+b {
     color: var(--pink);
 }
 
 
+/* #region POPUP*/
 
-
-popup{
+popup {
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
-    display: none;
     place-items: center;
     padding-inline: var(--page-gutter);
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
-    transition: 1s ease;
-}
-popup.open{
+    transition: 0.5s ease;
+    z-index: -10;
     display: grid;
-    opacity: 1;
 }
-popup > div{
+
+popup.open {
+    opacity: 1;
+    top: 0;
+    z-index: 100;
+    transition: 0.5s ease;
+}
+
+popup>div {
     background-color: white;
     padding: 20px;
     border-radius: var(--border-radius);
@@ -177,9 +187,251 @@ popup > div{
     grid-template-columns: 1fr;
     width: 100%;
     max-width: 600px;
-    transition: 1s ease;
+    transition: 0.5s ease;
     transform: scale(0);
 }
-popup.open > div{
+
+popup.open>div {
     transform: scale(1);
+}
+
+popup a {
+    width: 100%;
+    color: var(--pink);
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+popup a::after {
+    content: "\276F";
+    opacity: 0;
+    position: relative;
+    left: -20px;
+}
+
+popup a:hover {
+    color: var(--magenta);
+}
+
+popup a:hover::after {
+    opacity: 1;
+    left: 0;
+    transition: 0.5s ease;
+}
+
+popup button {
+    padding: 10px;
+    width: 200px;
+    border-radius: calc(var(--border-radius) * 2);
+    border: none;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+popup button:hover {
+    filter: brightness(0.9);
+}
+
+/* #endregion */
+
+/* #region FOOTER*/
+
+footer {
+    background: black;
+    margin-top: 100px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+    justify-content: center;
+}
+
+footer>p {
+    color: var(--white);
+}
+
+footer>div {
+    width: 100%;
+    max-width: var(--content-width);
+    padding: 0 var(--page-gutter);
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: var(--pink);
+    padding-bottom: 50px;
+    gap: 20px;
+}
+
+.links div {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.links a {
+    color: var(--white);
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.links a:not(.client-area):hover {
+    color: var(--pink);
+}
+
+.socials {
+    display: grid;
+    place-items: center;
+}
+
+.socials>div {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.socials>div>span {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.socials>div>span a {
+    width: 30px;
+    filter: brightness(0.8);
+}
+
+.socials>div>span a:hover {
+    filter: brightness(1);
+}
+
+/* #endregion */
+
+.nav-controller {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+.nav-controller:hover svg{
+    color: var(--pink);
+}
+
+.hide-on-desktop {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    :root {
+        --page-gutter: 20px;
+    }
+
+    .hide-on-mobile {
+        display: none !important;
+    }
+
+    .anchor-wrapper{
+        position:fixed;
+        display: flex;
+        flex-flow: column nowrap;
+        background: white;
+        z-index:300;
+        width: 280px;
+        top:0;
+        right:-280px;
+        height:100vh;
+        border-top-left-radius: var(--border-radius);
+        padding:20px;
+        justify-content: start;
+        align-items: flex-start;
+        gap:20px;
+    }
+    .anchor-wrapper a{
+        color: var(--black);
+    }
+
+    .anchor-wrapper > div{
+        border-bottom: 1px solid var(--white);
+        width:100%;
+        padding-bottom:10px;
+        display: flex !important;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .anchor-wrapper .logo-wrapper{
+        color: var(--black) !important;
+    }
+
+    .anchor-wrapper button{
+        color: var(--black);
+        width:30px;
+        padding:0;
+        height:30px;
+        border: none;
+        background:none;
+        cursor:pointer;
+    }
+    .anchor-wrapper button:hover{
+        color: var(--pink);
+    }
+
+    .anchor-wrapper.show{
+        right:0;
+        transition: right 0.5s ease;
+    }
+
+    .anchor-wrapper.show ~ div{
+        content:"";
+        position:fixed;
+        width: 100vw;
+        height:100vh;
+        z-index:200;
+        background-color:rgba(0, 0, 0, 0.4);
+        top:0;
+        left:0;
+        transition: 0.5s ease;
+    }
+
+    .hide-on-desktop {
+        display: initial !important;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    :root {
+        --page-gutter: 10px !important;
+    }
+
+    .links {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .banner {
+        display: none !important;
+    }
+
+    nav {
+        padding-top: 10px !important;
+    }
+
+    footer>div {
+        grid-template-columns: 1fr;
+    }
+
+    .socials {
+        grid-row: 2;
+        place-items: initial;
+    }
 }
