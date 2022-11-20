@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ametrine.host | Privacy</title>
+    <meta
+      name="description"
+      content="Learn what data we collect and how we handle it"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/trademark/AmetrineSmall.webp"
+    />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="./images/svg/puff.svg" />
+
+    <link rel="stylesheet" href="./css/privacy.css" />
+    <link rel="stylesheet" href="./css/shared.css" />
+
+    <style>
+      loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        z-index: 200;
+        display: grid;
+        place-items: center;
+      }
+      loader.loaded {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+    </style>
+    <noscript>
+      <style>
+        loader {
+          display: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+
+  <body>
+    <loader aria-hidden="true">
+      <img src="/images/svg/puff.svg" height="50" alt="Loading" />
+    </loader>
+    <popup id="support" aria-hidden="true">
+      <div>
+        <h2>Support</h2>
+        <p>Choose your preferred way of contacting us</p>
+        <a href="#">Write a ticket</a>
+        <a href="#">Write an E-Mail</a>
+        <a target="_blank" href="https://discord.gg/XqUfAh4p2Khttps://discord.gg/XqUfAh4p2K">Join our Discord</a>
+        <button id="close-support">Close</button>
+      </div>
+    </popup>
+    <nav>
+      <div class="banner">
+        <div id="cycler">
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.25 2.25a3 3 0 00-3 3v4.318a3 3 0 00.879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 005.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 00-2.122-.879H5.25zM6.375 7.5a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <p>Get 50% off your first Month with coupon <i>STARTUP</i></p>
+          </span>
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
+                clip-rule="evenodd"
+              />
+              <path
+                d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z"
+              />
+            </svg>
+            <p>
+              Join our <a target="_blank" href="https://discord.com/invite/XqUfAh4p2K">Discord server</a> and ask for a free trial!
+            </p>
+          </span>
+        </div>
+      </div>
+      <div>
+        <a class="logo-wrapper" href="/"
+          ><img
+            width="40px"
+            height="40px"
+            alt="logo"
+            src="./images/trademark/AmetrineSmall.webp"
+          />Ametrine.host</a
+        >
+        <div class="anchor-wrapper">
+          <div class="hide-on-desktop">
+            <a class="logo-wrapper" href="/"
+              ><img
+                width="40px"
+                height="40px"
+                alt="logo"
+                src="./images/trademark/AmetrineSmall.webp"
+              />Ametrine.host</a
+            >
+            <button id="close-nav">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <a href="#">Products</a>
+          <a id="support-button" role="button">Support</a>
+          <a href="#">Uptime</a>
+        </div>
+        <div id="nav-backdrop" class="hide-on-desktop"></div>
+        <button class="hide-on-desktop nav-controller" id="open-nav">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <a class="client-area hide-on-mobile" href="#">Client Area</a>
+      </div>
+    </nav>
+    <header>
+      <div class="content-wrapper">
+        <span class="header-text">
+          <h1>Privacy Policy</h1>
+          <p>Learn what data we collect and how we handle it</p>
+        </span>
+      </div>
+    </header>
+    <section id="cards-wrapper">
+      <div>
+        <p>Last Revision: 20th November 2022</p>
+        <h2>Introduction</h2>
+        <p>
+          At Ametrine.host, accessible from Ametrine.host, one of our main
+          priorities is the privacy of our visitors. This Privacy Policy
+          document contains types of information that is collected and recorded
+          by Ametrine.host and how we use it.
+        </p>
+
+        <p>
+          If you have additional questions or require more information about our
+          Privacy Policy, do not hesitate to contact us. Our Privacy Policy was
+          generated with the help of
+          <a target="_blank" href="https://www.gdprprivacypolicy.net/"
+            >GDPR Privacy Policy Generator</a
+          >
+        </p>
+
+        <h2>General Data Protection Regulation (GDPR)</h2>
+        <p>We are a Data Controller of your information.</p>
+
+        <p>
+          Ametrine.host legal basis for collecting and using the personal
+          information described in this Privacy Policy depends on the Personal
+          Information we collect and the specific context in which we collect
+          the information:
+        </p>
+        <ul>
+          <li>Ametrine.host needs to perform a contract with you</li>
+          <li>You have given Ametrine.host permission to do so</li>
+          <li>
+            Processing your personal information is in Ametrine.host legitimate
+            interests
+          </li>
+          <li>Ametrine.host needs to comply with the law</li>
+        </ul>
+
+        <p>
+          Ametrine.host will retain your personal information only for as long
+          as is necessary for the purposes set out in this Privacy Policy. We
+          will retain and use your information to the extent necessary to comply
+          with our legal obligations, resolve disputes, and enforce our
+          policies.
+        </p>
+
+        <p>
+          If you are a resident of the European Economic Area (EEA), you have
+          certain data protection rights. If you wish to be informed what
+          Personal Information we hold about you and if you want it to be
+          removed from our systems, please contact us.
+        </p>
+
+        <p>
+          In certain circumstances, you have the following data protection
+          rights:
+        </p>
+        <ul>
+          <li>
+            The right to access, update or to delete the information we have on
+            you.
+          </li>
+          <li>The right of rectification.</li>
+          <li>The right to object.</li>
+          <li>The right of restriction.</li>
+          <li>The right to data portability</li>
+          <li>The right to withdraw consent</li>
+        </ul>
+
+        <h2>Log Files</h2>
+
+        <p>
+          Ametrine.host follows a standard procedure of using log files. These
+          files log visitors when they visit websites. All hosting companies do
+          this and a part of hosting services' analytics. The information
+          collected by log files include internet protocol (IP) addresses,
+          browser type, Internet Service Provider (ISP), date and time stamp,
+          referring/exit pages, and possibly the number of clicks. These are not
+          linked to any information that is personally identifiable. The purpose
+          of the information is for analyzing trends, administering the site,
+          tracking users' movement on the website, and gathering demographic
+          information.
+        </p>
+
+        <h2>Cookies and Web Beacons</h2>
+
+        <p>
+          Like any other website, Ametrine.host uses 'cookies'. These cookies
+          are used to store information including visitors' preferences, and the
+          pages on the website that the visitor accessed or visited. The
+          information is used to optimize the users' experience by customizing
+          our web page content based on visitors' browser type and/or other
+          information.
+        </p>
+
+        <h2>Privacy Policies</h2>
+
+        <p>
+          You may consult this list to find the Privacy Policy for each of the
+          advertising partners of Ametrine.host.
+        </p>
+
+        <p>
+          Third-party ad servers or ad networks uses technologies like cookies,
+          JavaScript, or Web Beacons that are used in their respective
+          advertisements and links that appear on Ametrine.host, which are sent
+          directly to users' browser. They automatically receive your IP address
+          when this occurs. These technologies are used to measure the
+          effectiveness of their advertising campaigns and/or to personalize the
+          advertising content that you see on websites that you visit.
+        </p>
+
+        <p>
+          Note that Ametrine.host has no access to or control over these cookies
+          that are used by third-party advertisers.
+        </p>
+
+        <h2>Third Party Privacy Policies</h2>
+
+        <p>
+          Ametrine.host's Privacy Policy does not apply to other advertisers or
+          websites. Thus, we are advising you to consult the respective Privacy
+          Policies of these third-party ad servers for more detailed
+          information. It may include their practices and instructions about how
+          to opt-out of certain options.
+        </p>
+
+        <p>
+          You can choose to disable cookies through your individual browser
+          options. To know more detailed information about cookie management
+          with specific web browsers, it can be found at the browsers'
+          respective websites.
+        </p>
+
+        <h2>Children's Information</h2>
+
+        <p>
+          Another part of our priority is adding protection for children while
+          using the internet. We encourage parents and guardians to observe,
+          participate in, and/or monitor and guide their online activity.
+        </p>
+
+        <p>
+          Ametrine.host does not knowingly collect any Personal Identifiable
+          Information from children under the age of 13. If you think that your
+          child provided this kind of information on our website, we strongly
+          encourage you to contact us immediately and we will do our best
+          efforts to promptly remove such information from our records.
+        </p>
+
+        <h2>Online Privacy Policy Only</h2>
+
+        <p>
+          Our Privacy Policy created at GDPRPrivacyPolicy.net applies only to
+          our online activities and is valid for visitors to our website with
+          regards to the information that they shared and/or collect in
+          Ametrine.host. This policy is not applicable to any information
+          collected offline or via channels other than this website.
+        </p>
+
+        <h2>Consent</h2>
+
+        <p>
+          By using our website, you hereby consent to our Privacy Policy and
+          agree to its terms.
+        </p>
+        <h2>Amendment</h2>
+        <p>Ametrine.host reserves the right to make changes to our Privacy Policy at any time. Any changes will be reflected immediately on this page. Clients will be notified via social media, website or E-Mail</p>
+      </div>
+    </section>
+    <footer>
+      <div>
+        <div class="socials">
+          <div>
+            <a class="logo-wrapper" href="/"
+              ><img
+                width="40px"
+                alt="logo"
+                src="./images/trademark/AmetrineSmall.webp"
+              />Ametrine.host</a
+            >
+            <span>
+              <a target="_blank" href="https://discord.gg/XqUfAh4p2K"
+                ><img
+                  src="./images/svg/discord.svg"
+                  width="30px"
+                  height="30px"
+                  alt="Discord"
+              /></a>
+              <a href="#"
+                ><img
+                  src="./images/svg/youtube.svg"
+                  width="30px"
+                  height="30px"
+                  alt="Youtube"
+              /></a>
+            </span>
+          </div>
+        </div>
+        <div class="links">
+          <div>
+            <h3>Support</h3>
+            <a href="#">Make a ticket</a>
+            <a href="#">Write an E-Mail</a>
+            <a target="_blank" href="https://discord.gg/XqUfAh4p2K">Join our Discord</a>
+          </div>
+          <div>
+            <h3>Resources</h3>
+            <a href="/tos.html">Terms of Service</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/sla.html">Service Level Agreement</a>
+          </div>
+          <div>
+            <h3>Credits</h3>
+            <a target="_blank" href="https://www.iconfinder.com/kmgdesignid"
+              >Illustration</a
+            >
+            <!--graphics-->
+            <a target="_blank" href="https://heroicons.com/">Icons</a>
+            <!--icons-->
+            <a
+              target="_blank"
+              href="https://github.com/SamHerbert/SVG-Loaders/tree/master/svg-loaders"
+              >Loading Icon</a
+            >
+          </div>
+        </div>
+      </div>
+      <p>© Ametrine.host 2022</p>
+    </footer>
+    <script src="./js/nav.js" defer></script>
+    <script src="./js/popups.js" defer></script>
+    <!--DONT DEFER LOADER-->
+    <script src="./js/loader.js"></script>
+  </body>
+</html>

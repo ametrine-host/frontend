@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ametrine.host | TOS</title>
+    <meta
+      name="description"
+      content="Learn what you can do and what we do to provide our services."
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/trademark/AmetrineSmall.webp"
+    />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="./images/svg/puff.svg" />
+
+    <link rel="stylesheet" href="./css/tos.css" />
+    <link rel="stylesheet" href="./css/shared.css" />
+
+    <style>
+      loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        z-index: 200;
+        display: grid;
+        place-items: center;
+      }
+      loader.loaded {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+    </style>
+    <noscript>
+      <style>
+        loader {
+          display: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+
+  <body>
+    <loader aria-hidden="true">
+      <img src="/images/svg/puff.svg" height="50" alt="Loading" />
+    </loader>
+    <popup id="support" aria-hidden="true">
+      <div>
+        <h2>Support</h2>
+        <p>Choose your preferred way of contacting us</p>
+        <a href="#">Write a ticket</a>
+        <a href="#">Write an E-Mail</a>
+        <a target="_blank" href="https://discord.com/invite/XqUfAh4p2K">Join our Discord</a>
+        <button id="close-support">Close</button>
+      </div>
+    </popup>
+    <nav>
+      <div class="banner">
+        <div id="cycler">
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.25 2.25a3 3 0 00-3 3v4.318a3 3 0 00.879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 005.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 00-2.122-.879H5.25zM6.375 7.5a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <p>Get 50% off your first Month with coupon <i>STARTUP</i></p>
+          </span>
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
+                clip-rule="evenodd"
+              />
+              <path
+                d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z"
+              />
+            </svg>
+            <p>
+              Join our <a target="_blank" href="#">Discord server</a> and ask for a free trial!
+            </p>
+          </span>
+        </div>
+      </div>
+      <div>
+        <a class="logo-wrapper" href="/"
+          ><img
+            width="40px"
+            height="40px"
+            alt="logo"
+            src="./images/trademark/AmetrineSmall.webp"
+          />Ametrine.host</a
+        >
+        <div class="anchor-wrapper">
+          <div class="hide-on-desktop">
+            <a class="logo-wrapper" href="/"
+              ><img
+                width="40px"
+                height="40px"
+                alt="logo"
+                src="./images/trademark/AmetrineSmall.webp"
+              />Ametrine.host</a
+            >
+            <button id="close-nav">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <a href="#">Products</a>
+          <a id="support-button" role="button">Support</a>
+          <a href="#">Uptime</a>
+        </div>
+        <div id="nav-backdrop" class="hide-on-desktop"></div>
+        <button class="hide-on-desktop nav-controller" id="open-nav">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <a class="client-area hide-on-mobile" href="#">Client Area</a>
+      </div>
+    </nav>
+    <header>
+      <div class="content-wrapper">
+        <span class="header-text">
+          <h1>Terms of Service</h1>
+          <p>Learn what you can do and what we do to provide our services.</p>
+        </span>
+      </div>
+    </header>
+    <section id="cards-wrapper">
+      <div>
+        <p>Last Revision: 20th November 2022</p>
+        <h2>1. Terms</h2>
+        <p>
+          By accessing this Website, accessible from Ametrine.host, you are
+          agreeing to be bound by these Website Terms and Conditions of Use and
+          agree that you are responsible for the agreement with any applicable
+          local laws. If you disagree with any of these terms, you are
+          prohibited from accessing this site. The materials contained in this
+          Website are protected by copyright and trade mark law.
+        </p>
+
+        <h2>2. Use License</h2>
+
+        <p>
+          Permission is granted to temporarily download one copy of the
+          materials on Ametrine.host's Website for personal, non-commercial
+          transitory viewing only. This is the grant of a license, not a
+          transfer of title, and under this license you may not:
+        </p>
+
+        <ul>
+          <li>modify or copy the materials;</li>
+          <li>
+            use the materials for any commercial purpose or for any public
+            display;
+          </li>
+          <li>
+            attempt to reverse engineer any software contained on
+            Ametrine.host's Website;
+          </li>
+          <li>
+            remove any copyright or other proprietary notations from the
+            materials; or
+          </li>
+          <li>
+            transferring the materials to another person or "mirror" the
+            materials on any other server.
+          </li>
+        </ul>
+
+        <p>
+          This will let Ametrine.host to terminate upon violations of any of
+          these restrictions. Upon termination, your viewing right will also be
+          terminated and you should destroy any downloaded materials in your
+          possession whether it is printed or electronic format. These Terms of
+          Service has been created with the help of the
+          <a href="https://www.termsofservicegenerator.net"
+            >Terms Of Service Generator</a
+          >.
+        </p>
+
+        <h2>3. Disclaimer</h2>
+
+        <p>
+          All the materials on Ametrine.host’s Website are provided "as is".
+          Ametrine.host makes no warranties, may it be expressed or implied,
+          therefore negates all other warranties. Furthermore, Ametrine.host
+          does not make any representations concerning the accuracy or
+          reliability of the use of the materials on its Website or otherwise
+          relating to such materials or any sites linked to this Website.
+        </p>
+
+        <h2>4. Limitations</h2>
+
+        <p>
+          Ametrine.host or its suppliers will not be hold accountable for any
+          damages that will arise with the use or inability to use the materials
+          on Ametrine.host’s Website, even if Ametrine.host or an authorize
+          representative of this Website has been notified, orally or written,
+          of the possibility of such damage. Some jurisdiction does not allow
+          limitations on implied warranties or limitations of liability for
+          incidental damages, these limitations may not apply to you.
+        </p>
+
+        <h2>5. Revisions and Errata</h2>
+
+        <p>
+          The materials appearing on Ametrine.host’s Website may include
+          technical, typographical, or photographic errors. Ametrine.host will
+          not promise that any of the materials in this Website are accurate,
+          complete, or current. Ametrine.host may change the materials contained
+          on its Website at any time without notice. Ametrine.host does not make
+          any commitment to update the materials.
+        </p>
+
+        <h2>6. Links</h2>
+
+        <p>
+          Ametrine.host has not reviewed all of the sites linked to its Website
+          and is not responsible for the contents of any such linked site. The
+          presence of any link does not imply endorsement by Ametrine.host of
+          the site. The use of any linked website is at the user’s own risk.
+        </p>
+
+        <h2>7. Site Terms of Use Modifications</h2>
+
+        <p>
+          Ametrine.host may revise these Terms of Use for its Website at any
+          time without prior notice. By using this Website, you are agreeing to
+          be bound by the current version of these Terms and Conditions of Use.
+        </p>
+
+        <h2>8. Your Privacy</h2>
+
+        <p>Please read our Privacy Policy.</p>
+
+        <h2>9. Governing Law</h2>
+
+        <p>
+          Any claim related to Ametrine.host's Website shall be governed by the
+          laws of Slovakia without regards to its conflict of law provisions.
+        </p>
+        <h2>Amendment</h2>
+        <p>Ametrine.host reserves the right to make changes to our Terms of Service at any time. Any changes will be reflected immediately on this page. Clients will be notified via social media, website or E-Mail</p>
+      </div>
+    </section>
+    <footer>
+      <div>
+        <div class="socials">
+          <div>
+            <a class="logo-wrapper" href="/"
+              ><img
+                width="40px"
+                alt="logo"
+                src="./images/trademark/AmetrineSmall.webp"
+              />Ametrine.host</a
+            >
+            <span>
+              <a target="_blank" href="https://discord.com/invite/XqUfAh4p2K"
+                ><img
+                  src="./images/svg/discord.svg"
+                  width="30px"
+                  height="30px"
+                  alt="Discord"
+              /></a>
+              <a href="#"
+                ><img
+                  src="./images/svg/youtube.svg"
+                  width="30px"
+                  height="30px"
+                  alt="Youtube"
+              /></a>
+            </span>
+          </div>
+        </div>
+        <div class="links">
+          <div>
+            <h3>Support</h3>
+            <a href="#">Make a ticket</a>
+            <a href="#">Write an E-Mail</a>
+            <a target="_blank" href="https://discord.com/invite/XqUfAh4p2K">Join our Discord</a>
+          </div>
+          <div>
+            <h3>Resources</h3>
+            <a href="/tos.html">Terms of Service</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/sla.html">Service Level Agreement</a>
+          </div>
+          <div>
+            <h3>Credits</h3>
+            <a target="_blank" href="https://www.iconfinder.com/kmgdesignid"
+              >Illustration</a
+            >
+            <!--graphics-->
+            <a target="_blank" href="https://heroicons.com/">Icons</a>
+            <!--icons-->
+            <a
+              target="_blank"
+              href="https://github.com/SamHerbert/SVG-Loaders/tree/master/svg-loaders"
+              >Loading Icon</a
+            >
+          </div>
+        </div>
+      </div>
+      <p>© Ametrine.host 2022</p>
+    </footer>
+    <script src="./js/nav.js" defer></script>
+    <script src="./js/popups.js" defer></script>
+    <!--DONT DEFER LOADER-->
+    <script src="./js/loader.js"></script>
+  </body>
+</html>

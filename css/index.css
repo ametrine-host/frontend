@@ -1,7 +1,7 @@
 header{
     width: 100%;
     height: 70vh;
-    background: url("../images/avif/header.avif");
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("../images/avif/header.avif");
     background-size: cover;
     background-position: 0% 60%;
     backdrop-filter: brightness(0.5);
@@ -189,7 +189,7 @@ section a:hover{
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
     background: none;
-    color: var(--pink);
+    color: var(--black);
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -203,6 +203,10 @@ section a:hover{
   
   .active, .collapsible:hover {
     background-color: var(--white);
+    color: black;
+  }
+  .collapsible:hover::after{
+    text-shadow: 0 0 0 black !important;
   }
   .content {
     padding: 0 18px;
@@ -212,16 +216,17 @@ section a:hover{
     transition: max-height 0.2s ease-out;
     max-width: var(--faq-width);
   }
-  .collapsible:after {
+  .collapsible::after {
     content: '\02795';
     font-size: 13px;
     color: transparent;  
-    text-shadow: 0 0 0 var(--pink);
+    text-shadow: 0 0 0 var(--black);
     float: right;
     margin-left: 5px;
   }
-  
-  .active:after {
+
+  .active::after {
+    text-shadow: 0 0 0 black !important;
     content: "\2796";
   }
 

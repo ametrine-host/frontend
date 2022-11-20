@@ -252,6 +252,7 @@ footer {
 
 footer>p {
     color: var(--white);
+    text-align: center;
 }
 
 footer>div {
@@ -264,7 +265,7 @@ footer>div {
 
 .links {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     color: var(--pink);
     padding-bottom: 50px;
     gap: 20px;
